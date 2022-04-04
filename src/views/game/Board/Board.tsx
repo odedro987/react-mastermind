@@ -10,7 +10,9 @@ interface Props {}
 
 function Board({}: Props) {
   const [rows, setRows] = useState<Array<Array<string>>>([]);
-  const [currentRow, setCurrentRow] = useState(9);
+  const INPUT_ROW = 9;
+  const [currentRow, setCurrentRow] = useState(INPUT_ROW - 1);
+  const [finished, setFinished] = useState(false);
 
   useEffect(() => {
     const rows: Array<Array<string>> = [];
@@ -23,32 +25,53 @@ function Board({}: Props) {
     setRows(rows);
   }, []);
 
+  const findFirstEmpty = () => {
+    return rows[INPUT_ROW].findIndex((color) => color === "empty");
+  };
+
   const renderRows = () => {
     return rows.map((color, i) => (
       <Row
         key={i}
         colors={color}
         type={SlotType.GUESS}
-        onRemove={handleGuessClick}
+        onRemove={!finished && i === INPUT_ROW ? handleGuessClick : undefined}
       />
     ));
   };
 
   const handleGuessClick = (index: number) => {
-    rows[currentRow][index] = "empty";
+    rows[INPUT_ROW][index] = "empty";
     setRows([...rows]);
   };
 
   const handleKeyboardClick = (color: string) => {
-    const firstEmpty = rows[currentRow].findIndex((color) => color === "empty");
-    rows[currentRow][firstEmpty] = color;
+    const firstEmpty = findFirstEmpty();
+    rows[INPUT_ROW][firstEmpty] = color;
     setRows([...rows]);
+  };
+
+  const submitGuess = () => {
+    if (findFirstEmpty() === -1) {
+      // check guess
+
+      if (currentRow >= 0) {
+        for (let i = currentRow; i <= rows.length - 2; i++) {
+          rows[i] = [...rows[i + 1]];
+        }
+        rows[INPUT_ROW] = [...EMPTY_ROW];
+        setRows([...rows]);
+        setCurrentRow(currentRow - 1);
+      } else {
+        setFinished(true);
+      }
+    }
   };
 
   return (
     <div className="Board">
       {renderRows()}
-      <Keyboard onClick={handleKeyboardClick} />
+      <Keyboard onClick={handleKeyboardClick} onSubmit={submitGuess} />
     </div>
   );
 }

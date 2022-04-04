@@ -5,4 +5,14 @@
   flex-direction: column;
   margin-top: 20px;
   border: 2px white solid;
+
+  &-btn {
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    border: none;
+    border-top: 2px white solid;
+    font-size: larger;
+    cursor: pointer;
+  }
 }

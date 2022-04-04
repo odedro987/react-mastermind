@@ -7,9 +7,10 @@ import "./Keyboard.scss";
 
 interface Props {
   onClick: (color: string) => void;
+  onSubmit: () => void;
 }
 
-function Keyboard({ onClick }: Props) {
+function Keyboard({ onClick, onSubmit }: Props) {
   return (
     <div className="Keyboard">
       <Row
@@ -22,6 +23,9 @@ function Keyboard({ onClick }: Props) {
         type={SlotType.KEYBOARD}
         onAdd={onClick}
       />
+      <button className="Keyboard-btn" onClick={onSubmit}>
+        CHECK
+      </button>
     </div>
   );
 }
