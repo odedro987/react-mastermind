@@ -30,7 +30,7 @@ function Slot({ color, type, index, onClick }: Props) {
 
   return (
     <div
-      className={`Slot ${onClick && "Slot--clickable"}`}
+      className={`Slot ${onClick ? "Slot--clickable" : ""}`}
       style={{ backgroundColor: COLORS[color] }}
       onClick={onClick && handleClick}
     ></div>
