@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-mastermind/static/css/main.848ab435.css",
-    "main.js": "/react-mastermind/static/js/main.01b5664d.js",
+    "main.css": "/react-mastermind/static/css/main.caceb089.css",
+    "main.js": "/react-mastermind/static/js/main.25b6f1fa.js",
     "static/js/787.c1112931.chunk.js": "/react-mastermind/static/js/787.c1112931.chunk.js",
     "index.html": "/react-mastermind/index.html",
-    "main.848ab435.css.map": "/react-mastermind/static/css/main.848ab435.css.map",
-    "main.01b5664d.js.map": "/react-mastermind/static/js/main.01b5664d.js.map",
+    "main.caceb089.css.map": "/react-mastermind/static/css/main.caceb089.css.map",
+    "main.25b6f1fa.js.map": "/react-mastermind/static/js/main.25b6f1fa.js.map",
     "787.c1112931.chunk.js.map": "/react-mastermind/static/js/787.c1112931.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.848ab435.css",
-    "static/js/main.01b5664d.js"
+    "static/css/main.caceb089.css",
+    "static/js/main.25b6f1fa.js"
   ]
 }
