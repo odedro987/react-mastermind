@@ -15,12 +15,12 @@ function Keyboard({ onClick, onSubmit }: Props) {
     <div className="Keyboard">
       <Row
         colors={COLOR_NAMES.slice(0, 4)}
-        type={SlotType.KEYBOARD}
+        slotType={SlotType.KEYBOARD}
         onAdd={onClick}
       />
       <Row
         colors={COLOR_NAMES.slice(4)}
-        type={SlotType.KEYBOARD}
+        slotType={SlotType.KEYBOARD}
         onAdd={onClick}
       />
       <button className="Keyboard-btn" onClick={onSubmit}>

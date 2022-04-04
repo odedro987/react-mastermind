@@ -1,0 +1,16 @@
+.ResponseSlot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px white solid;
+    background-color: #001219;
+    margin: 2px;
+
+    &--correct {
+        background-color: #3a7d44;
+    }
+
+    &--misplaced {
+        background-color: #ffd500;
+    }
+}
